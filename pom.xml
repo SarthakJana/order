@@ -4,6 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
 		<module>order-service</module>
+		<module>common</module>
 	</modules>
 
 	<parent>
@@ -62,6 +63,11 @@
 				<groupId>com.food.order</groupId>
 				<artifactId>order-message</artifactId>
 				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.food.order</groupId>
+				<artifactId>common-domain</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
