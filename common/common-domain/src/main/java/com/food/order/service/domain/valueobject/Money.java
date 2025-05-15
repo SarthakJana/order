@@ -1,4 +1,4 @@
-package com.food.order.domain.valueobject;
+package com.food.order.service.domain.valueobject;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,6 +8,8 @@ import java.util.Objects;
  * Money value class
  */
 public class Money {
+
+    public static Money ZER0 = new Money(BigDecimal.ZERO);
     private final BigDecimal amount;
 
     public Money(BigDecimal amount) {
@@ -34,8 +36,8 @@ public class Money {
         return new Money(setScale(this.amount.subtract(money.getAmount())));
     }
 
-    public Money multiply(Money money) {
-        return new Money(setScale(this.amount.multiply(money.getAmount())));
+    public Money multiply(int multiplier) {
+        return new Money(setScale(this.amount.multiply(new BigDecimal(multiplier))));
     }
 
     public BigDecimal setScale(BigDecimal input) {

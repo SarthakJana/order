@@ -1,4 +1,4 @@
-package com.food.order.domain.event;
+package com.food.order.service.domain.event;
 
 /**
  * Base class for all domain event objects

@@ -23,7 +23,6 @@
             <artifactId>junit-jupiter-params</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>com.food.order</groupId>
             <artifactId>common-domain</artifactId>

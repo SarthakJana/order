@@ -1,4 +1,4 @@
-package com.food.order.domain.valueobject;
+package com.food.order.service.domain.valueobject;
 
 import java.util.UUID;
 
