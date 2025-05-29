@@ -192,7 +192,7 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder streetAddress(StreetAddress val) {
+        public Builder deliveryAddress(StreetAddress val) {
             streetAddress = val;
             return this;
         }
