@@ -4,6 +4,7 @@ import com.food.order.service.domain.dto.create.CreateOrderCommand;
 import com.food.order.service.domain.dto.create.CreateOrderResponse;
 import com.food.order.service.domain.dto.create.OrderAddressDto;
 import com.food.order.service.domain.dto.create.OrderItemDto;
+import com.food.order.service.domain.dto.track.TrackOrderResponse;
 import com.food.order.service.domain.entity.Order;
 import com.food.order.service.domain.entity.OrderItem;
 import com.food.order.service.domain.entity.Product;
@@ -61,5 +62,13 @@ public class OrderDataMapper {
                 orderAddress.getCity(),
                 orderAddress.getPostalCode(),
                 orderAddress.getStreet());
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
+                .build();
     }
 }
