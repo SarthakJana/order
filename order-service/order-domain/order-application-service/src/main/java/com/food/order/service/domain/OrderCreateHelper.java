@@ -53,8 +53,6 @@ public class OrderCreateHelper {
 
     private Restaurant checkRestaurant(CreateOrderCommand createOrderCommand) {
         Restaurant restaurant = orderDataMapper.createOrderCommandToRestaurant(createOrderCommand);
-        restaurantRepository.findRestaurantInformation(restaurant);
-
         Optional<Restaurant> optionalRestaurant = restaurantRepository.findRestaurantInformation(restaurant);
 
         if (optionalRestaurant.isEmpty()) {
