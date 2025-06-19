@@ -3,7 +3,7 @@ package com.food.order.service.domain;
 import com.food.order.service.domain.dto.track.TrackOrderQuery;
 import com.food.order.service.domain.dto.track.TrackOrderResponse;
 import com.food.order.service.domain.entity.Order;
-import com.food.order.service.domain.exception.OrderNotFound;
+import com.food.order.service.domain.exception.OrderNotFoundException;
 import com.food.order.service.domain.mapper.OrderDataMapper;
 import com.food.order.service.domain.ports.output.repository.OrderRepository;
 import com.food.order.service.domain.valueobject.TrackingId;
@@ -32,7 +32,7 @@ public class OrderTrackCommandHandler {
 
         if (orderResult.isEmpty()) {
             log.warn("Could not find order with order id: {}", trackOrderQuery.getOrderTrackingId());
-            throw new OrderNotFound("Could not find order with tracking id: " + trackOrderQuery.getOrderTrackingId());
+            throw new OrderNotFoundException("Could not find order with tracking id: " + trackOrderQuery.getOrderTrackingId());
         }
 
         return orderDataMapper.orderToTrackOrderResponse(orderResult.get());
